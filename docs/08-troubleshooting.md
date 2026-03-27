@@ -41,9 +41,4 @@
 
 ## Full Reset
 
-To restore the PSP to its original, unmodified state:
-
-1. Delete the ARK-4 directories from the memory card
-2. Delete the `SEPLUGINS` directory
-3. If cIPL was installed: reinstall the official 6.61 firmware
-4. The PSP will be running stock firmware
+To restore the PSP to its original, unmodified state, refer to [Uninstalling ARK-4](04-ark4-permanent.md#uninstalling-ark-4).

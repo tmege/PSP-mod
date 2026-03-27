@@ -1,60 +1,62 @@
 # 3. ARK-4 Installation
 
-This procedure installs ARK-4 as a **temporary** custom firmware. In temporary mode, the CFW must be re-launched from the XMB after each reboot. To make it permanent, refer to [Permanent Installation](04-ark4-permanent.md).
+This guide covers three installation methods: temporary, permanent (cIPL), and full flash. Start with the temporary installation, then optionally proceed to cIPL and/or full flash.
 
-## Step 1: Download ARK-4
+---
 
-1. Download the latest release: [ARK4.zip](https://github.com/PSP-Archive/ARK-4/releases/latest/download/ARK4.zip)
-2. Extract the archive on your computer
+## Temporary Installation
 
-## Step 2: Copy Files to the Memory Card
+1. All ARK-4 files are already included in this repository at [`ARK4(1)/`](../ARK4(1)/).
+2. Plug your PSP into a computer. This will automatically enable USB Mode and mount the console's memory card to the computer. You can also plug the memory card directly into a computer if you have a Memory Stick compatible card reader.
+   - If the console's USB mode doesn't automatically activate, it can be manually activated in the XMB settings.
+3. Copy the contents from the [`ARK4(1)/`](../ARK4(1)/) folder to the memory card:
+   - Copy the [`ARK_01234/`](../ARK4(1)/ARK_01234/) folder to `PSP/SAVEDATA/` on the PSP's memory card or PSP Go's internal storage.
+   - Copy the [`ARK_Loader/`](../ARK4(1)/ARK_Loader/) folder to `PSP/GAME/` on the console's memory card.
+     - You can also copy the [`ARK_Full_Installer/`](../ARK4(1)/PSP/ARK_Full_Installer/) and [`ARK_cIPL/`](../ARK4(1)/PSP/ARK_cIPL/) folders to the same `PSP/GAME/` folder to do a full flash or installation of permanent CFW respectively.
+4. Exit USB mode after transferring the files over. View your games list and there should be a new listing for the ARK Loader, alongside its respective save file in the save data management.
+5. To install custom firmware, select the **ARK Loader** application and launch it.
+6. Once the PSP restarts, check in **Settings** > **System Settings** > **System Information** and confirm you see the system software version along with the custom firmware version after it.
+7. Your PSP is now running temporary custom firmware. If you would like to install it permanently, continue to the section below for cIPL installation.
 
-1. Connect the PSP to the computer via USB
-2. On the PSP: **Settings** > **USB Connection** to enable USB mode
-3. Copy the following directories from the extracted archive to the memory card:
+---
 
-| Source Directory | Destination on Memory Card |
-| ---------------- | ------------------------- |
-| `ARK_01234/` | `ms0:/PSP/SAVEDATA/ARK_01234/` |
-| `ARK_Loader/` | `ms0:/PSP/GAME/ARK_Loader/` |
+## Installing CFW with cIPL (Optional, recommended)
 
-The resulting directory structure should be:
+This is the preferred method of installing CFW, as it can run during bootup and can give you brick protection.
 
-```
-ms0:/
-├── PSP/
-│   ├── GAME/
-│   │   └── ARK_Loader/
-│   │       └── EBOOT.PBP
-│   └── SAVEDATA/
-│       └── ARK_01234/
-│           ├── ARK.BIN
-│           ├── ARK4.BIN
-│           └── ...
-└── SEPLUGINS/
-    ├── game.txt
-    ├── vsh.txt
-    └── pops.txt
-```
+1. All ARK-4 files are already included in this repository at [`ARK4(1)/`](../ARK4(1)/).
+2. Plug your PSP into a computer. This will automatically enable USB Mode and mount the console's memory card to the computer. You can also plug the memory card directly into a computer if you have a Memory Stick compatible card reader.
+   - If the console's USB mode doesn't automatically activate, it can be manually activated in the XMB settings.
+3. Copy the [`ARK_cIPL/`](../ARK4(1)/PSP/ARK_cIPL/) folder into `PSP/GAME/` on the memory card if you haven't done so already.
+4. Launch the **ARK cIPL installer** application, and select the option for **New cIPL**.
+5. Your PSP will now have cIPL ARK-4 CFW. It can be seen in the system settings.
 
-4. Disconnect the USB cable
+> **Caution:** Flashing the IPL carries a small but non-zero risk of bricking the PSP if the process is interrupted. Ensure the battery is adequately charged and the charger is connected before proceeding.
 
-## Step 3: Launch ARK-4
+---
 
-1. On the PSP, navigate to **Game** > **Memory Stick**
-2. Select and launch **ARK Loader**
-3. The screen may briefly flash — this is normal behaviour
-4. The XMB will reappear with ARK-4 active
+## Full Flash Installation (Optional, recommended)
 
-## Step 4: Verify the Installation
+Normally, many functions of ARK-4 are kept in the `ARK_01234` save data folder, such as the CFW settings or custom launcher. If this is undesirable for you, you can install these functions to the PSP's internal flash memory so ARK-4's save data file is no longer necessary. That being said, the `ARK_01234` save file folder will still be prioritised for CFW settings if it's detected on the memory stick. It will also be re-created if you run an ARK-4 update from an OTA update or sideloading the ARK_Updater application.
 
-1. Navigate to **Settings** > **System Settings** > **System Information**
-2. The firmware version should display **ARK 4.xx.xx Live** (or similar)
+Since the PSP's flash memory is also too small (except on the PSP Go) to store the custom launcher that comes with ARK-4's save data folder, PRO Shell will instead be used as the custom launcher with a separate and more basic recovery menu if the save data folder is not detected.
 
-If the version string includes "ARK", the installation was successful.
+> **Note:** If you are using ARK-4 on a PSP Go, then the full flash installation can be skipped entirely, as you can just use the `ARK_01234` save file in the 16 GB internal memory.
 
-## Important Notes
+1. All ARK-4 files are already included in this repository at [`ARK4(1)/`](../ARK4(1)/).
+2. Plug your PSP into a computer. This will automatically enable USB Mode and mount the console's memory card to the computer. You can also plug the memory card directly into a computer if you have a Memory Stick compatible card reader.
+   - If the console's USB mode doesn't automatically activate, it can be manually activated in the XMB settings.
+3. Copy the [`ARK_Full_Installer/`](../ARK4(1)/PSP/ARK_Full_Installer/) folder into `PSP/GAME/` on the memory card.
+4. Launch the application and follow the on-screen instructions.
+5. Your PSP will now have ARK-4 fully installed on the console's internal flash memory, allowing the reliance on having an ARK-4 save file to be no longer necessary for operation.
 
-- In temporary mode, ARK-4 must be re-launched via the ARK Loader each time the PSP is restarted
-- This mode is entirely safe and easily reversible — simply restarting the PSP without launching the loader will revert to the official firmware
-- To make ARK-4 load automatically at boot, proceed to [Permanent Installation](04-ark4-permanent.md)
+---
+
+## Verification
+
+Go to **Settings** > **System Settings** > **System Information**. System Software should display **6.61 ARK-4**.
+
+## Post-Jailbreak Tips
+
+- **Installing Games:** Connect to PC and create a folder named `ISO` in the root of the Memory Stick. Place your `.ISO` or `.CSO` game files there.
+- **Accessing the VSH Menu:** Press the **SELECT** button on the home screen to access the VSH menu and customise settings.

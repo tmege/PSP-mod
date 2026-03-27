@@ -11,10 +11,12 @@
 
 ## Required Software
 
-| File | Description | Link |
-| ---- | ----------- | ---- |
-| Firmware 6.60 or 6.61 | Official Sony firmware (only if the PSP is below 6.60) | [pspunk.com/psp-update](https://www.pspunk.com/psp-update/) |
-| ARK-4 (ARK4.zip) | Custom firmware | [GitHub — Direct download](https://github.com/PSP-Archive/ARK-4/releases/latest/download/ARK4.zip) |
+All required files are already included in this repository:
+
+| File | Description | Location |
+| ---- | ----------- | -------- |
+| Firmware 6.60 or 6.61 | Official Sony firmware (only if the PSP is below 6.60) | [`ARK4(1)/UPDATE/`](../ARK4(1)/UPDATE/) |
+| ARK-4 | Custom firmware | [`ARK4(1)/`](../ARK4(1)/) |
 
 ## Checking the Current Firmware Version
 

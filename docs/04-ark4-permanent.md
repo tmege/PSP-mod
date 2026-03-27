@@ -1,38 +1,8 @@
-# 4. Making ARK-4 Permanent (cIPL)
+# 4. Reverting & Uninstalling ARK-4
 
-> **Prerequisite:** ARK-4 must be running in temporary mode before proceeding. Complete [ARK-4 Installation](03-ark4-installation.md) first.
+> **Note:** For installation instructions (cIPL and Full Flash), refer to the main [ARK-4 Installation](03-ark4-installation.md) guide.
 
-The cIPL (custom Initial Program Loader) method writes ARK-4 to the PSP's internal flash memory, allowing it to load automatically at every boot without the need to manually launch the loader.
-
-## Installation Procedure
-
-### Step 1: Copy the cIPL Flasher
-
-1. Connect the PSP to the computer via USB
-2. From the ARK-4 archive, locate the `ARK_cIPL/` directory
-3. Copy `ARK_cIPL/` into `ms0:/PSP/GAME/`:
-
-```
-ms0:/PSP/GAME/ARK_cIPL/
-└── EBOOT.PBP
-```
-
-4. Disconnect the USB cable
-
-### Step 2: Flash cIPL
-
-1. Ensure ARK-4 is currently active (launch the ARK Loader if it is not)
-2. Navigate to **Game** > **Memory Stick**
-3. Launch **ARK cIPL Flasher**
-4. Press **X** to confirm and begin flashing
-5. **Do not power off the PSP** during this process
-6. The PSP will restart automatically once the process is complete
-
-### Step 3: Verify
-
-After rebooting, navigate to **Settings** > **System Settings** > **System Information**. The firmware version should display the ARK-4 version string, confirming that the CFW is now loading permanently.
-
-## Reverting to Temporary Mode
+## Reverting cIPL to Temporary Mode
 
 To remove the permanent installation and revert to temporary mode:
 
@@ -42,6 +12,11 @@ To remove the permanent installation and revert to temporary mode:
 
 Alternatively, reinstalling the official 6.61 firmware via the update method described in [Firmware Update](02-firmware-update.md) will also remove the cIPL.
 
-## Caution
+## Uninstalling ARK-4
 
-Flashing the IPL carries a small but non-zero risk of bricking the PSP if the process is interrupted (e.g., by a power loss). Ensure the battery is adequately charged and the charger is connected before proceeding.
+To fully remove ARK-4 from the PSP and restore stock firmware:
+
+1. Delete the ARK-4 directories from the memory card (`ARK_01234`, `ARK_Loader`, `ARK_cIPL`, `ARK_Full_Installer`)
+2. Delete the `SEPLUGINS` directory
+3. If cIPL was installed: reinstall the official 6.61 firmware
+4. The PSP will be running stock firmware

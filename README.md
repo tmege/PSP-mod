@@ -19,8 +19,8 @@ This guide is based on the method demonstrated in [this video tutorial](https://
 
 1. [Prerequisites](docs/01-prerequisites.md) — Required hardware and software
 2. [Firmware Update](docs/02-firmware-update.md) — Upgrading to 6.60/6.61 (if needed)
-3. [ARK-4 Installation](docs/03-ark4-installation.md) — Installing the custom firmware
-4. [Permanent Installation](docs/04-ark4-permanent.md) — Making ARK-4 permanent via cIPL
+3. [ARK-4 Installation](docs/03-ark4-installation.md) — Temporary, cIPL, and Full Flash installation
+4. [Reverting & Uninstalling](docs/04-ark4-permanent.md) — Reverting cIPL and removing ARK-4
 5. [Configuration](docs/05-configuration.md) — Post-installation settings
 6. [Plugins](docs/06-plugins.md) — Installed plugins and their configuration
 7. [Homebrews and Emulators](docs/07-homebrews.md) — Homebrew applications
@@ -38,15 +38,26 @@ This guide is based on the method demonstrated in [this video tutorial](https://
 
 ARK-4 is actively maintained and supports all PSP models (1000, 2000, 3000, Go, and Street).
 
+## Included Files
+
+All files required for the modding process are included in the [`ARK4(1)/`](ARK4(1)/) directory:
+
+| Resource | Location |
+| -------- | -------- |
+| ARK-4 custom firmware | [`ARK4(1)/`](ARK4(1)/) |
+| ARK Loader | [`ARK4(1)/ARK_Loader/`](ARK4(1)/ARK_Loader/) |
+| ARK savedata | [`ARK4(1)/ARK_01234/`](ARK4(1)/ARK_01234/) |
+| cIPL Flasher | [`ARK4(1)/PSP/ARK_cIPL/`](ARK4(1)/PSP/ARK_cIPL/) |
+| Firmware update (6.61) | [`ARK4(1)/UPDATE/`](ARK4(1)/UPDATE/) |
+| Themes | [`ARK4(1)/themes/`](ARK4(1)/themes/) |
+| PC utilities | [`ARK4(1)/PC/`](ARK4(1)/PC/) |
+
 ## Useful Links
 
 | Resource | Link |
 | -------- | ---- |
 | Video tutorial | [YouTube](https://www.youtube.com/watch?v=zKD__94GxWQ) |
-| ARK-4 CFW page | [pspunk.com/psp-cfw](https://www.pspunk.com/psp-cfw/) |
-| Official firmware 6.60/6.61 | [pspunk.com/psp-update](https://www.pspunk.com/psp-update/) |
 | ARK-4 GitHub repository | [PSP-Archive/ARK-4](https://github.com/PSP-Archive/ARK-4) |
-| PSP game library (ISOs) | Find your own source |
 
 ## Hardware Used
 
